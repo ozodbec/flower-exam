@@ -37,7 +37,6 @@ import FiltersByCategory from "../components/FilterCategory";
 import FiltersByCountry from "../components/FilterCountry";
 import FiltersByColor from "../components/FilterColor";
 import EditFlower from "../components/EditFlower";
-import { VideoOffIcon } from "lucide-react";
 
 export default function Home() {
   const [editing, setEditing] = useState(null);
@@ -139,7 +138,7 @@ export default function Home() {
       <div className="w-full">
         <div className="mb-5">
           <div className="flex w-full items-center justify-between border-b py-5">
-            <h2 className="h2">Admin panel</h2>
+            <h2 className="h2 font-bold text-4xl">Boshqaruvlar paneli</h2>
             <Button disabled={!flowers} onClick={setAddItemModal}>
               Qo'shish
               <PlusIcon className="ml-2" />
@@ -190,7 +189,7 @@ export default function Home() {
               )}
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[100px]">Id</TableHead>
+                  <TableHead className="w-[100px]">ID</TableHead>
                   <TableHead>Gul Nomi</TableHead>
                   <TableHead>Turkumi</TableHead>
                   <TableHead>Rangi</TableHead>

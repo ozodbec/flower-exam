@@ -3,6 +3,7 @@ import { ModeToggle } from "./mode-toggle";
 import { Button } from "@/components/ui/button";
 import { useAppStore } from "../lib/zustand";
 import { PinRightIcon, PinLeftIcon } from "@radix-ui/react-icons";
+import { Link } from "react-router-dom"; 
 
 export default function Header() {
   const setAdmin = useAppStore((state) => state.setAdmin);
@@ -17,10 +18,13 @@ export default function Header() {
     <div className="px-5 py-3 shadow-sm">
       <div className="flex justify-between">
         <div className="flex items-center gap-5">
-        <h2 className="font-medium">
-            <span className="text-[#737272] hover:cursor-pointer hover:text-[#000]">
+          <h2 className="font-medium">
+            <Link
+              to="/"
+              className="text-[#737272] hover:cursor-pointer hover:text-[#000]"
+            >
               Bosh sahifa /{" "}
-            </span>
+            </Link>
             Boshqaruvlar paneli
           </h2>
           <Button onClick={handleSidebarOpen} variant="outline" size="icon">
@@ -32,7 +36,6 @@ export default function Header() {
           <Button
             onClick={() => {
               const checker = confirm("Saytdan chiqmoqchimisiz?");
-
               checker && setAdmin(null);
             }}
             variant="outline"

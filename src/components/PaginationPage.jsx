@@ -12,7 +12,7 @@ import { limit } from "../lib/my-utils";
 export function PaginationPage({ setSkip, total, pageCount, skip }) {
   return (
     total > limit && (
-      <Pagination>
+      <Pagination className="flex justify-center">
         <PaginationContent>
           <PaginationItem>
             <PaginationPrevious
@@ -20,7 +20,7 @@ export function PaginationPage({ setSkip, total, pageCount, skip }) {
                 e.preventDefault();
                 setSkip((prev) => {
                   if (prev > 0) {
-                    return (prev -= limit);
+                    return prev - limit;
                   } else return 0;
                 });
               }}
@@ -33,8 +33,12 @@ export function PaginationPage({ setSkip, total, pageCount, skip }) {
               return (
                 <PaginationItem key={item}>
                   <PaginationLink
-                    isActive={skip / limit + 1 === item ? true : false}
+                    isActive={skip / limit + 1 === item}
                     href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setSkip((item - 1) * limit); // Raqam bosilganda tegishli sahifaga o'tadi
+                    }}
                   >
                     {item}
                   </PaginationLink>
