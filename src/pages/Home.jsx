@@ -138,7 +138,7 @@ export default function Home() {
       <div className="w-full">
         <div className="mb-5">
           <div className="flex w-full items-center justify-between border-b py-5">
-            <h2 className="h2 font-bold text-4xl">Boshqaruvlar paneli</h2>
+            <h2 className="h2 text-4xl font-bold">Boshqaruvlar paneli</h2>
             <Button disabled={!flowers} onClick={setAddItemModal}>
               Qo'shish
               <PlusIcon className="ml-2" />
@@ -211,7 +211,9 @@ export default function Home() {
                           className="block h-5 w-5 rounded-full border"
                         ></span>
                       </TableCell>
-                      <TableCell className="text-right">{price}0,000 so'm</TableCell>
+                      <TableCell className="text-right">
+                        {price},000 so'm
+                      </TableCell>
                       <TableCell className="flex items-center justify-end gap-2 text-right">
                         <TooltipProvider delayDuration="0">
                           <Tooltip>

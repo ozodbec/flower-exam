@@ -65,6 +65,8 @@ export const panelLinks = [
 ];
 
 export const BASE_URL = "https://json-api.uz/api/project/flower";
+
+export const needStatisticReport = ["category", "country", "color"];
 export const ImageSize = 5_242_880;
 export const summaryLimit = 200;
 export const limit = 10;
